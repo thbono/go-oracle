@@ -4,7 +4,7 @@ includedir=${prefix}/sdk/include
 
 Name: oci8
 Description: oci8 library
-Libs: -L${libdir}
+Libs: -L${libdir} -lclntsh
 Libs.private:
 Cflags: -I${includedir}
 Version: 11.2
