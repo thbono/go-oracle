@@ -1,4 +1,4 @@
-prefix=/instantclient_12_1
+prefix=/instantclient_11_2
 libdir=${prefix}
 includedir=${prefix}/sdk/include
 
