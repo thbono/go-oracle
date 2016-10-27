@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Unzip instant client.
 RUN unzip instantclient-basic-linux.x64-*.zip -d / \
     && unzip instantclient-sdk-linux.x64-*.zip -d / \
-    && ln -s /instantclient_12_1/libclntsh.so.12.1 /instantclient_12_1/libclntsh.so
+    && ln -s /instantclient_11_2/libclntsh.so.11.2 /instantclient_11_2/libclntsh.so
 
 # The package config doesn't seem to be enough, this is also required.
-ENV LD_LIBRARY_PATH /instantclient_12_1
+ENV LD_LIBRARY_PATH /instantclient_11_2
