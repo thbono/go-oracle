@@ -1,4 +1,4 @@
-FROM golang:1.7.1
+FROM golang:1.8
 
 # Required for building the Oracle DB driver
 ADD oci8.pc /usr/lib/pkgconfig/oci8.pc
@@ -6,7 +6,7 @@ ADD instantclient-basic-linux.x64-*.zip ./
 ADD instantclient-sdk-linux.x64-*.zip ./
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-		unzip \
+	unzip \
         libaio1 \
         && rm -rf /var/lib/apt/lists/*
 
@@ -17,3 +17,6 @@ RUN unzip instantclient-basic-linux.x64-*.zip -d / \
 
 # The package config doesn't seem to be enough, this is also required.
 ENV LD_LIBRARY_PATH /instantclient_11_2
+
+# Get ora dep
+RUN go get -d -v gopkg.in/rana/ora.v4
